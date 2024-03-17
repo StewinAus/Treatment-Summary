@@ -1,0 +1,74 @@
+﻿<Window x:Class="Treatment_Summary.Summary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Treatment_Summary"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Summary" Height="1070" Width="800">
+    <Grid x:Name="summarygrid" RenderTransformOrigin="0,0" Margin="0,0,0,-381">
+        <Image HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="227" Source="bvsc logo.jpg"/>
+        <Label Content="Radiation Oncology&#xD;&#xA;Treatment Summary" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="60" Margin="232,10,0,0" VerticalAlignment="Top" Width="314" FontSize="20" FontFamily="Calibri" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" HorizontalContentAlignment="Right"  Height="83" Margin="583,7,0,0" TextWrapping="Wrap" Text="Brisbane Veterinary Specialist Centre&#xD;&#xA;2/57 Old Northern Road&#xD;&#xA;ALBANY CREEK QLD 4035&#xD;&#xA;(p) 07 3264 9400&#xD;&#xA;(e) info@bvsc.com.au" VerticalAlignment="Top" Width="199"/>
+        <GroupBox x:Name="PatientDetails" Header="Patient Details" HorizontalAlignment="Left" Height="138" Margin="21,108,0,0" VerticalAlignment="Top" Width="339" FontFamily="Calibri" FontSize="18" FontWeight="Bold">
+            <Canvas Height="111" Margin="-6,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="331">
+                <TextBox x:Name="mrnTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Canvas.Left="65" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="mrnLabel" Content="MRN: " HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="10" FontWeight="Bold"/>
+                <TextBox x:Name="nameTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Canvas.Left="65" Canvas.Top="40" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="nameLabel" Content="Name:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="40" FontWeight="Bold"/>
+                <TextBox x:Name="dobTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Canvas.Left="65" Canvas.Top="71" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="dobLabel" Content="DOB:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="71" FontWeight="Bold"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="ContactDetails" Header="Patient Details" HorizontalAlignment="Left" Height="138" Margin="381,108,0,0" VerticalAlignment="Top" Width="400" FontFamily="Calibri" FontSize="18" FontWeight="Bold">
+            <Canvas Height="110" Margin="-6,-6,-2,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="397">
+                <TextBox x:Name="addrTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Canvas.Left="75" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="addrLabel" Content="Address" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="70" FontFamily="Calibri" FontSize="16" Canvas.Top="10"/>
+                <TextBox x:Name="phTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Canvas.Left="75" Canvas.Top="40" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="phLabel" Content="Ph:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="40"/>
+                <TextBox x:Name="emailTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Canvas.Left="75" Canvas.Top="71" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="emailLabel" Content="email:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="71"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="Treatment_Summary" Header="Treatment Summary" HorizontalAlignment="Left" Height="407" Margin="21,249,0,0" VerticalAlignment="Top" Width="760" FontFamily="Calibri" FontSize="18" FontWeight="Bold">
+            <Canvas Height="378" Margin="-6,-6,-2,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="756">
+                <TextBox x:Name="courseTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Canvas.Left="65" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="courseLabel" Content="Course: " HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="10" FontWeight="Bold"/>
+                <TextBox x:Name="intentTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Canvas.Left="270" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="intentLabel" Content="Intent:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="10" Canvas.Left="210" FontWeight="Bold"/>
+                <TextBox x:Name="diagTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Canvas.Left="467" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="diagLabel" Content="Diagnosis:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="76" FontFamily="Calibri" FontSize="16" Canvas.Top="10" Canvas.Left="386" FontWeight="Bold"/>
+                <TextBox x:Name="course1stTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Canvas.Left="195" Canvas.Top="55" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="course1stLabel" Content="Course 1st Treatment Day: " HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="195" FontFamily="Calibri" FontSize="16" Canvas.Top="55" FontWeight="Bold"/>
+                <TextBox x:Name="courselastTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Canvas.Left="616" Canvas.Top="55" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="courselastLabel" Content="Couse Last Treatment Day:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="188" FontFamily="Calibri" FontSize="16" Canvas.Top="55" Canvas.Left="428" FontWeight="Bold"/>
+                <TextBox x:Name="coursedurTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Canvas.Left="195" Canvas.Top="104" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="coursedurLabel" Content="Duration of Course(Day/s): " HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="195" FontFamily="Calibri" FontSize="16" Canvas.Top="104" FontWeight="Bold"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="PlanDetails" Header="Plan Details" HorizontalAlignment="Left" Height="201" Margin="57,455,0,0" VerticalAlignment="Top" Width="686" FontFamily="Calibri" FontSize="18" FontWeight="Bold">
+            <Canvas Height="208" Margin="-6,-6,-2,-93" VerticalAlignment="Top" HorizontalAlignment="Left" Width="682">
+                <TextBox x:Name="siteTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Canvas.Left="65" Canvas.Top="10" FontSize="14" FontWeight="Normal"/>
+                <Label x:Name="siteLabel" Content="Site: " HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" FontFamily="Calibri" FontSize="16" Canvas.Top="10"/>
+                <TextBox x:Name="pl1stTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="10" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="10" Canvas.Top="71" FontSize="16"><Run Text="First Date "/><Run Text="of Treatment:"/></TextBlock>
+                <TextBox x:Name="pllastTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="127" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="127" Canvas.Top="71" FontSize="16"><Run Text="La"/><Run Text="st Date "/><Run Text="of Treatment:"/></TextBlock>
+                <TextBox x:Name="pldurTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="245" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="245" Canvas.Top="71" FontSize="16"><Run Text="Duration"/><Run Text=" "/><Run Text="of Treatment:"/></TextBlock>
+                <TextBox x:Name="pldoseTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="355" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="355" Canvas.Top="71" FontSize="16" Text="Dose Delivered"/>
+                <TextBox x:Name="plfracTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="464" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="464" Canvas.Top="71" FontSize="16" Text="Fractions Delivered"/>
+                <TextBox x:Name="pltechTextBox" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Canvas.Left="581" Canvas.Top="124" FontSize="14" FontWeight="Normal"/>
+                <TextBlock Height="48" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" HorizontalAlignment="Left" Canvas.Left="581" Canvas.Top="71" FontSize="16" Text="Treatment Technique"/>
+            </Canvas>
+        </GroupBox>
+
+        <oxy:PlotView Grid.Column="1" HorizontalAlignment="Left" Height="301" Width="750" Margin="26,665,0,0" VerticalAlignment="Top" Model="{Binding}">
+        </oxy:PlotView>
+        <Button Content="Print" HorizontalAlignment="Left" Height="45" Margin="514,971,0,0" VerticalAlignment="Top" Width="208" Click="Button_Click"/>
+
+    </Grid>
+</Window>
